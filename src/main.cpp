@@ -13,6 +13,7 @@ extern void gemm_mem_aliasing(const float* A, const float* B, float* C, int M, i
 extern void gemm_loop_unrolling_x1(const float* A, const float* B, float* C, int M, int N, int K);
 extern void gemm_loop_unrolling_x3(const float* A, const float* B, float* C, int M, int N, int K);
 extern void gemm_cache_blocking(const float* A, const float* B, float* C, int M, int N, int K);
+extern void gemm_simd(const float* A, const float* B, float* C, int M, int N, int K);
 
 struct BenchmarkResult {
     double gflops;
@@ -24,7 +25,8 @@ std::map<std::string, GemmFunc> gemm_funcs = {
     {"mem_aliasing", gemm_mem_aliasing},
     {"loop_unrolling_x1", gemm_loop_unrolling_x1},
     {"loop_unrolling_x3", gemm_loop_unrolling_x3}, 
-    {"cache_blocking", gemm_cache_blocking}
+    {"cache_blocking", gemm_cache_blocking}, 
+    {"simd", gemm_simd}
 };
 
 BenchmarkResult run_benchmark_avg(GemmFunc gemm, int M, int N, int K, int runs = 5) {

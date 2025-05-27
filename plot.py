@@ -2,12 +2,23 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import argparse
 
+# Define a consistent color mapping for functions
+FUNCTION_COLORS = {
+    'naive': '#6B8E9E',        # muted blue
+    'mem_aliasing': '#D4A5A5',  # muted red
+    'loop_unrolling_x1': '#9EBE9E',  # muted green
+    'loop_unrolling_x3': '#B8A5D4',  # muted purple
+    'cache_blocking': '#E6C8A5',     # muted orange
+    'simd': '#A5A5A5'          # muted gray
+}
+
 def plot_metrics(df, funcs, metric, ylabel, filename_suffix):
     plt.figure(figsize=(8, 5))
 
     for func in funcs:
         sub = df[df['Function'] == func]
-        plt.plot(sub['M'], sub[metric], marker='o', label=func)
+        color = FUNCTION_COLORS.get(func, 'gray')  # Use gray as fallback for unknown functions
+        plt.plot(sub['M'], sub[metric], marker='o', label=func, color=color)
 
     plt.xlabel("Matrix Size (M=N=K)")
     plt.ylabel(ylabel)

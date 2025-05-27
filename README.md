@@ -1,1 +1,1 @@
-*under construction...under construction...under construction...under construction...under construction...under construction...under construction...under construction...under construction...under construction...under construction...under construction...under construction...*
+Accompanying write up : https://freth251.github.io/digital-garden/projects/tensor-opt-kernels/Building-a-High-Performance-GEMM-Kernel

@@ -1,7 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import argparse
-import os
 
 def plot_metrics(df, funcs, metric, ylabel, filename_suffix):
     plt.figure(figsize=(8, 5))

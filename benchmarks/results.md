@@ -1,0 +1,36 @@
+# Performance Results
+
+This document contains the performance results (in GFLOPS and execution time in seconds) for different matrix multiplication techniques across various matrix sizes.
+
+| Function          | M    | N    | K    | GFLOPS  | TimeSec     |
+|:------------------|:-----|:-----|:-----|:--------|:------------|
+| cache_blocking    |  128 |  128 |  128 | 2.55017 |  0.00164472 |
+| cache_blocking    |  256 |  256 |  256 | 3.23055 |   0.0103866 |
+| cache_blocking    |  512 |  512 |  512 | 3.92613 |   0.0683716 |
+| cache_blocking    |  768 |  768 |  768 | 4.35004 |    0.208267 |
+| cache_blocking    | 1024 | 1024 | 1024 | 3.36948 |    0.637335 |
+| loop_unrolling_x1 |  128 |  128 |  128 | 2.90572 |  0.00144347 |
+| loop_unrolling_x1 |  256 |  256 |  256 | 2.43649 |   0.0137716 |
+| loop_unrolling_x1 |  512 |  512 |  512 | 2.01966 |    0.132911 |
+| loop_unrolling_x1 |  768 |  768 |  768 | 1.83954 |    0.492497 |
+| loop_unrolling_x1 | 1024 | 1024 | 1024 | 1.45606 |     1.47486 |
+| loop_unrolling_x3 |  128 |  128 |  128 | 2.27979 |  0.00183978 |
+| loop_unrolling_x3 |  256 |  256 |  256 | 1.86239 |   0.0180169 |
+| loop_unrolling_x3 |  512 |  512 |  512 | 1.84385 |    0.145584 |
+| loop_unrolling_x3 |  768 |  768 |  768 | 1.81669 |    0.498692 |
+| loop_unrolling_x3 | 1024 | 1024 | 1024 |  1.7171 |     1.25064 |
+| mem_aliasing      |  128 |  128 |  128 | 2.54536 |  0.00164782 |
+| mem_aliasing      |  256 |  256 |  256 |  1.8996 |    0.017664 |
+| mem_aliasing      |  512 |  512 |  512 | 1.81527 |    0.147876 |
+| mem_aliasing      |  768 |  768 |  768 | 1.74786 |     0.51833 |
+| mem_aliasing      | 1024 | 1024 | 1024 | 1.68071 |     1.27773 |
+| naive             |  128 |  128 |  128 | 2.25799 |  0.00185754 |
+| naive             |  256 |  256 |  256 | 1.81932 |   0.0184434 |
+| naive             |  512 |  512 |  512 | 1.69959 |    0.157941 |
+| naive             |  768 |  768 |  768 | 1.64506 |    0.550721 |
+| naive             | 1024 | 1024 | 1024 | 1.39871 |     1.53533 |
+| simd              |  128 |  128 |  128 | 13.9721 | 0.000300192 |
+| simd              |  256 |  256 |  256 | 12.2989 |  0.00272825 |
+| simd              |  512 |  512 |  512 | 13.2454 |   0.0202662 |
+| simd              |  768 |  768 |  768 | 13.6883 |   0.0661858 |
+| simd              | 1024 | 1024 | 1024 | 10.9017 |    0.196986 |  
